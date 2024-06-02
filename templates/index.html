@@ -7,6 +7,19 @@
 </head>
 <body>
 
+<div id="login-form-wrapper">
+    <form id="login-form" method="post">
+        <label for="username">Username: </label>
+        <input type="text" name="username" id="username" required>
+
+        <label for="password">Password: </label>
+        <input type="text" name="password" id="password" required>
+
+        <button id="login-button">Log in</button>
+    </form>
+</div>
+
+
 <table>
 
     <tr>
@@ -20,11 +33,29 @@
         <td>{{ book.id }}</td>
         <td>{{ book.name }}</td>
         <td>{{ book.author}}</td>
-        <td><button data-id="{{ book.id }}" class="delete-button" >Delete</button></td>
+        <td>
+            <button data-id="{{ book.id }}" class="delete-button">Delete</button>
+        </td>
 
     </tr>
     {% endfor %}
 </table>
+
+<hr>
+
+<form id="create-form" method="post">
+    <label for="name">Name: </label>
+    <input type="text" name="name" id="name" required>
+
+    <label for="author">Author: </label>
+    <input type="text" name="author" id="author" required>
+
+    <button id="create-button">Create</button>
+
+</form>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="/static/index.js"></script>
 
 </body>
 </html>

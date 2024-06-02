@@ -32,3 +32,9 @@ def login_required(handler):
         return handler(request, response, *args, **kwargs)
 
     return wrapped_handler
+
+
+def on_exception(request, response, exception):
+    if isinstance(exception, InvalidTokenException):
+        response.text = "Token is invalid"
+        response.status_code = 401
