@@ -8,7 +8,7 @@ class BookStorge:
         self.books = []
 
     def all(self):
-        return [book.as_dict() for book in self.books]
+        return [book._asdict() for book in self.books]
 
     def get(self, id):
         for book in self.books:
